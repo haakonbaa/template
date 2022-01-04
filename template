@@ -1,0 +1,13 @@
+#!/bin/bash
+mkdir -p ~/templates
+if [[ -z "$1" || "$#" != 1 ]]; then
+    echo "expected 1 argument, got $#!"
+    exit 1
+elif [[ -e ~/templates/"$1" ]]; then
+    cp -a ~/templates/"$1"/. "$(pwd)"
+    exit $?
+else
+    echo "file ~/templates/${1} does not exist!"
+    exit 1
+fi
+
