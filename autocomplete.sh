@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir -p ~/templates
-alltemplates=$(ls -d ~/templates/*/)
+alltemplates=$(ls -d ~/templates/*/ 2>/dev/null)
 templates=""
 for i in $alltemplates; do
     dirname=${i:0:-1}
